@@ -22,10 +22,4 @@ import { SideNavbarComponent } from '../../../layout/side-navbar/side-navbar.com
   templateUrl: './ledger.component.html',
   styleUrl: './ledger.component.css',
 })
-export class LedgerComponent {
-  isMenuOpen = false;
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
-}
+export class LedgerComponent {}
