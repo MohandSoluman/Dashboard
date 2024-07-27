@@ -1,36 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TableModule } from 'primeng/table';
-import { ButtonModule } from 'primeng/button';
-import { InputTextModule } from 'primeng/inputtext';
-import { DropdownModule } from 'primeng/dropdown';
-import { MultiSelectModule } from 'primeng/multiselect';
-import { SliderModule } from 'primeng/slider';
-import { TagModule } from 'primeng/tag';
-import { ProgressBarModule } from 'primeng/progressbar';
-import { FormsModule } from '@angular/forms';
-import { ToastModule } from 'primeng/toast';
-import { ToolbarModule } from 'primeng/toolbar';
-import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @Component({
   selector: 'app-bank-list',
   standalone: true,
-  imports: [
-    CommonModule,
-    TableModule,
-    ButtonModule,
-    InputTextModule,
-    DropdownModule,
-    MultiSelectModule,
-    SliderModule,
-    TagModule,
-    ProgressBarModule,
-    FormsModule,
-    ToastModule,
-    ToolbarModule,
-    ConfirmDialogModule,
-  ],
+  imports: [CommonModule],
 
   templateUrl: './bank-list.component.html',
   styleUrl: './bank-list.component.css',
