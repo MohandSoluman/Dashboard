@@ -1,124 +1,184 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Table with Sort Icons and Custom Sizes</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="bg-gray-100 p-8">
-    <div class="container mx-auto">
-      <table
-        class="w-full text-sm text-left text-gray-500 dark:text-gray-400 border-collapse border border-gray-200"
-      >
-        <thead class="bg-gray-200 text-gray-700">
-          <tr>
-            <th
-              class="px-6 py-3 border border-gray-300 flex items-center space-x-2 cursor-pointer"
+<!-- component -->
+<div class="flex items-center justify-center p-12">
+  <div class="mx-auto w-full max-w-[1000px]">
+    <form method="POST">
+      <div class="flex justify-end">
+        <button
+          type="button"
+          class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center me-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
+        >
+          Discard
+        </button>
+        <button
+          type="button"
+          class="text-white bg-[#0bbac7] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-1.5 text-center inline-flex items-center me-2 mb-2"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 mr-2"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"
+            ></path>
+            <polyline points="17 21 17 13 7 13 7 21"></polyline>
+            <polyline points="7 3 7 8 15 8"></polyline>
+          </svg>
+          Save
+        </button>
+      </div>
+      <div class="-mx-3 flex flex-wrap">
+        <div class="w-full px-3 sm:w-1/2">
+          <div class="mb-5">
+            <label
+              for="fName"
+              class="mb-3 block text-base font-medium text-[#07074D]"
             >
-              <span>Code</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 3a1 1 0 01.894.553l4 7a1 1 0 01-.447 1.342l-4 2a1 1 0 01-.894 0l-4-2a1 1 0 01-.447-1.342l4-7A1 1 0 0110 3z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </th>
-            <th
-              class="px-6 py-3 border border-gray-300 flex items-center space-x-2 cursor-pointer"
+              Code
+            </label>
+            <input
+              type="text"
+              name="fName"
+              id="fName"
+              placeholder="First Name"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+        <div class="w-full px-3 sm:w-1/2">
+          <div class="mb-5">
+            <label
+              for="lName"
+              class="mb-3 block text-base font-medium text-[#07074D]"
             >
-              <span>Name</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 3a1 1 0 01.894.553l4 7a1 1 0 01-.447 1.342l-4 2a1 1 0 01-.894 0l-4-2a1 1 0 01-.447-1.342l4-7A1 1 0 0110 3z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </th>
-            <th
-              class="px-6 py-3 border border-gray-300 flex items-center space-x-2 cursor-pointer"
+              Name
+            </label>
+            <input
+              type="text"
+              name="lName"
+              id="lName"
+              placeholder="Last Name"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+        <div class="w-full px-3 sm:w-1/2">
+          <div class="mb-5">
+            <label
+              for="fName"
+              class="mb-3 block text-base font-medium text-[#07074D]"
             >
-              <span>Short Name</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-4 w-4"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 3a1 1 0 01.894.553l4 7a1 1 0 01-.447 1.342l-4 2a1 1 0 01-.894 0l-4-2a1 1 0 01-.447-1.342l4-7A1 1 0 0110 3z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-            </th>
-            <th class="px-6 py-3 border border-gray-300">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border border-gray-300">
-            <td class="px-6 py-4 border border-gray-300 w-1/6">001</td>
-            <td class="px-6 py-4 border border-gray-300 w-1/3">Product A</td>
-            <td class="px-6 py-4 border border-gray-300 w-1/4">Prod A</td>
-            <td class="px-6 py-4 border border-gray-300 w-1/4">
-              <div class="flex space-x-2">
-                <button
-                  class="flex items-center p-2 bg-cyan-500 rounded-xl hover:rounded-3xl hover:bg-yellow-600 transition-all duration-300 text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  class="flex items-center p-2 bg-red-500 rounded-xl hover:rounded-3xl hover:bg-red-600 transition-all duration-300 text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M6 2L6 4M6 4L4 4M6 4H14M14 4H18M6 4L6 2M6 2L6 6M18 2L18 6M18 6L18 2M4 6H20L18 22H6L4 6M10 10V16M14 10V16"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </td>
-          </tr>
-          <!-- Repeat for more rows as needed -->
-        </tbody>
-      </table>
-    </div>
-  </body>
-</html>
+              Short Name
+            </label>
+            <input
+              type="text"
+              name="fName"
+              id="fName"
+              placeholder="First Name"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+        <div class="w-full px-3 sm:w-1/2">
+          <div class="mb-5">
+            <label
+              for="lName"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Bank Address
+            </label>
+            <input
+              type="text"
+              name="lName"
+              id="lName"
+              placeholder="Last Name"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+        <div class="w-full px-3 sm:w-1/2">
+          <div class="mb-5">
+            <label
+              for="fName"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Contac Name
+            </label>
+            <input
+              type="text"
+              name="fName"
+              id="fName"
+              placeholder="First Name"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+        <div class="w-full px-3 sm:w-1/2">
+          <div class="mb-5">
+            <label
+              for="lName"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              name="lName"
+              id="lName"
+              placeholder="Last Name"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+        <div class="w-full px-3 sm:w-1/2">
+          <div class="mb-5">
+            <label
+              for="fName"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              First Name
+            </label>
+            <input
+              type="text"
+              name="fName"
+              id="fName"
+              placeholder="First Name"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+        <div class="w-full px-3 sm:w-1/2">
+          <div class="mb-5">
+            <label
+              for="lName"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              name="lName"
+              id="lName"
+              placeholder="Last Name"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button
+          type="button"
+          class="text-cyan-600 hover:text-white border border-cyan-600 hover:bg-cyan-800 focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+        >
+          Add New Line
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
