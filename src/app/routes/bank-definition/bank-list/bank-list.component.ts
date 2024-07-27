@@ -11,16 +11,8 @@ import { ProgressBarModule } from 'primeng/progressbar';
 import { FormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
 import { ToolbarModule } from 'primeng/toolbar';
-import { MessageService } from 'primeng/api';
-import { ConfirmationService } from 'primeng/api';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
-interface Product {
-  id: number;
-  code: string;
-  name: string;
-  shortName: string;
-}
 @Component({
   selector: 'app-bank-list',
   standalone: true,
@@ -39,7 +31,7 @@ interface Product {
     ToolbarModule,
     ConfirmDialogModule,
   ],
-  providers: [MessageService, ConfirmationService],
+
   templateUrl: './bank-list.component.html',
   styleUrl: './bank-list.component.css',
 })
