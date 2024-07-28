@@ -13,24 +13,65 @@
   stateKey="statedemo-session"
 >
   <ng-template pTemplate="caption">
-    <div class="d-flex align-items-center justify-content-between bg-white">
-      <div class="">
-        <p-iconField iconPosition="right">
-          <input
-            pInputText
-            type="text"
-            placeholder=" Search With Name"
-            [(ngModel)]="searchTerm"
-            (input)="onSearchChange($event)"
-          />
-          <p-inputIcon>
-            <i class="pi pi-search"></i>
-          </p-inputIcon>
-        </p-iconField>
+    <div class="flex align-items-center justify-between bg-white">
+      <p-iconField iconPosition="right">
+        <input
+          pInputText
+          type="text"
+          placeholder=" Search With Name"
+          [(ngModel)]="searchTerm"
+          (input)="onSearchChange($event)"
+        />
+        <p-inputIcon>
+          <i class="pi pi-search"></i>
+        </p-inputIcon>
+      </p-iconField>
+
+      <div
+        class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0"
+      >
+        <button
+          class="flex items-center justify-center text-white bg-[#0bbac7] hover:bg-[#1da1f2]/90 focus:ring-4 focus:outline-none focus:ring-[#1da1f2]/50 font-medium rounded-lg text-sm px-12 py-2.5 text-center dark:focus:ring-[#1da1f2]/55 me-2 mb-2 gap-2"
+          routerLink="/user-management"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="stroke-white"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+            />
+            <line
+              x1="12"
+              y1="8"
+              x2="12"
+              y2="16"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <line
+              x1="8"
+              y1="12"
+              x2="16"
+              y2="12"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          Add New
+        </button>
       </div>
-      <button class="btn btn-add text-white px-5" routerLink="/manage-user">
-        <i class="fa fa-circle-plus px-2"></i> Add New
-      </button>
     </div>
   </ng-template>
 
