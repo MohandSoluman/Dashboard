@@ -1,16 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-bank-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
 
   templateUrl: './bank-list.component.html',
   styleUrl: './bank-list.component.css',
 })
 export class BankListComponent implements OnInit {
   items: any = [];
+  constructor(private router: Router) {}
+
+  navigateToAddNew() {
+    this.router.navigate(['/bankForm']);
+  }
   ngOnInit(): void {
     this.items = [
       { id: 1, code: '011', name: 'Name', shortName: 'Short Name' },

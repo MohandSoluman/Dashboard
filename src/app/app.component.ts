@@ -4,7 +4,6 @@ import { HeaderComponent } from './layout/header/header.component';
 import { SideNavbarComponent } from './layout/side-navbar/side-navbar.component';
 import { BankListComponent } from './routes/bank-definition/bank-list/bank-list.component';
 import { BankFormComponent } from './routes/bank-definition/bank-form/bank-form.component';
-import { LedgerComponent } from './routes/ledger/ledger/ledger.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +14,6 @@ import { LedgerComponent } from './routes/ledger/ledger/ledger.component';
     SideNavbarComponent,
     BankListComponent,
     BankFormComponent,
-    LedgerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
