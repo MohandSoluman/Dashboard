@@ -42,7 +42,7 @@ import { TableModule } from 'primeng/table';
 export class UserManagmentComponent implements OnInit {
   userId: string | null = null;
   form!: FormGroup;
-  categories = signal<string[]>([]);
+
   user?: IUser;
 
   private _route = inject(ActivatedRoute);

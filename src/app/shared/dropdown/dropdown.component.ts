@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './dropdown.component.html',
-  styleUrl: './dropdown.component.css'
+  styleUrl: './dropdown.component.css',
 })
 export class DropdownComponent {
   isOpen = false;
@@ -15,7 +15,6 @@ export class DropdownComponent {
   }
 
   onOptionSelect(option: string) {
-    console.log('Selected:', option);
     this.isOpen = false; // Close dropdown after selection
   }
 }
