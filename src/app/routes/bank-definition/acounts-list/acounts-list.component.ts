@@ -1,94 +1,21 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { BankDataServiceService } from '../../services/bank-data-service.service';
 
 @Component({
   selector: 'app-acounts-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgFor, NgIf],
   templateUrl: './acounts-list.component.html',
   styleUrl: './acounts-list.component.css',
 })
 export class AcountsListComponent implements OnInit {
-  items: any = [];
+  tableData: any[] = [];
+
+  constructor(private bankDataServiceService: BankDataServiceService) {}
   ngOnInit(): void {
-    this.items = [
-      {
-        id: 1,
-        AccountNumber: 'Name',
-        AccountCode: 'Short Name',
-        AccountName: 'mane',
-        branch: '250',
-        Iban: '85201l',
-        currency: 'currency',
-        currentBalnce: 'balnce',
-        userPermition: 'permissions',
-        openingBalance: 'opening balnce',
-      },
-      {
-        id: 2,
-
-        AccountNumber: 'Name',
-        AccountCode: 'Short Name',
-        AccountName: 'mane',
-        branch: '250',
-        Iban: '85201l',
-        currency: 'currency',
-        currentBalnce: 'balnce',
-        userPermition: 'permissions',
-        openingBalance: 'opening balnce',
-      },
-      {
-        id: 3,
-
-        AccountNumber: 'Name',
-        AccountCode: 'Short Name',
-        AccountName: 'mane',
-        branch: '250',
-        Iban: '85201l',
-        currency: 'currency',
-        currentBalnce: 'balnce',
-        userPermition: 'permissions',
-        openingBalance: 'opening balnce',
-      },
-      {
-        id: 4,
-
-        AccountNumber: 'Name',
-        AccountCode: 'Short Name',
-        AccountName: 'mane',
-        branch: '250',
-        Iban: '85201l',
-        currency: 'currency',
-        currentBalnce: 'balnce',
-        userPermition: 'permissions',
-        openingBalance: 'opening balnce',
-      },
-      {
-        id: 5,
-
-        AccountNumber: 'Name',
-        AccountCode: 'Short Name',
-        AccountName: 'mane',
-        branch: '250',
-        Iban: '85201l',
-        currency: 'currency',
-        currentBalnce: 'balnce',
-        userPermition: 'permissions',
-        openingBalance: 'opening balnce',
-      },
-      {
-        id: 6,
-
-        AccountNumber: 'Name',
-        AccountCode: 'Short Name',
-        AccountName: 'mane',
-        branch: '250',
-        Iban: '85201l',
-        currency: 'currency',
-        currentBalnce: 'balnce',
-        userPermition: 'permissions',
-        openingBalance: 'opening balnce',
-      },
-    ];
+    this.bankDataServiceService.data$.subscribe((data) => {
+      this.tableData = data;
+    });
   }
 }
