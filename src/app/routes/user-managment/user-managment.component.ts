@@ -148,6 +148,9 @@ export class UserManagmentComponent implements OnInit {
   }
 
   submitForm(): void {
+    debugger;
+    console.log(this.form.value);
+
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
