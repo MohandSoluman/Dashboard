@@ -6,7 +6,7 @@ import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 
 import { ButtonModule } from 'primeng/button';
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
@@ -34,32 +34,32 @@ import Swal from 'sweetalert2';
 })
 export class UserListComponent implements OnInit {
   users = signal<any[]>([]);
+  filteredUsers = signal<any[]>([]);
   searchTerm = signal<string>('');
+
   managementService = inject(ManagementService);
   messageService = inject(MessageService);
-
-  filteredUsers = computed(() => {
-    const term = this.searchTerm().toLowerCase();
-    if (!term) {
-      return this.users();
-    }
-    return this.users().filter((user) =>
-      user.name.toLowerCase().includes(term)
-    );
-  });
 
   ngOnInit() {
     this.loadUsers();
   }
 
   loadUsers() {
-    const users = this.managementService.getAllUsers();
-    this.users.set(users);
+    this.users.set(this.managementService.getAllUsers());
+    this.filteredUsers.set(this.managementService.getAllUsers());
   }
 
-  onSearchChange(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.searchTerm.set(input.value);
+  onSearchChange(event: any) {
+    const val = event.target.value as string;
+    this.searchTerm.set(val);
+    if (val === '') {
+      this.filteredUsers.set(this.users());
+    } else {
+      const filtered = this.users().filter((product) =>
+        product.name.toLowerCase().includes(val.toLowerCase())
+      );
+      this.filteredUsers.set(filtered);
+    }
   }
 
   onDeleteUser(id: number) {
@@ -73,9 +73,9 @@ export class UserListComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.managementService.deleteUser(id.toString());
+        this.managementService.deleteUser(id);
         this.loadUsers();
-        this.showSuccess('User Deleted Successfully');
+        this.showSuccess('Product Deleted Successfully');
       }
     });
   }

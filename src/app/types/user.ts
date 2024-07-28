@@ -13,7 +13,6 @@ export interface BankList {
   accountNumber: string;
   glAccountCode: string;
   glAccountName: string;
-  branchr: string;
   iban: any;
   currency: any;
   currentBalance: string;
