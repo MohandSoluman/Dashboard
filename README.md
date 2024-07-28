@@ -10,6 +10,7 @@ This project is an admin dashboard built with Angular 17 and styled with Tailwin
 - Tailwind CSS for styling
 - Dark mode and light mode toggle
 - Responsive design
+-primeNg
 - CRUD operations
 - Form validation and dynamic form field addition
 - Data display in tables with sorting and filtering capabilities
@@ -26,7 +27,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository
 
     ```sh
-    git clone  https://github.com/MohandSoluman/Dashboard.git
+    git clone  https://github.com/MohandSoluman/Dashboard
     ```
     
 
